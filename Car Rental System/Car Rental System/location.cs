@@ -21,18 +21,17 @@ namespace Car_Rental_System
 
         void clearData()
         {
-            zipcode.Text = "";
+           // zipcode.Text = "";
             pickup.Text = "";
             dropoff.Text = "";
-            dateTimePicker1.Text = "";
-            dateTimePicker2.Text = "";
+            textBox1.Text = "";
             membershiptxt.Text = "";
         }
 
         private void backbutton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            book ss = new book();
+            bookingDetails ss = new bookingDetails();
             ss.Show();
         }
 
@@ -57,23 +56,21 @@ namespace Car_Rental_System
             cmd.Parameters.AddWithValue("@returnfrom1", dateReturn);
             cmd.Parameters.AddWithValue("@pickuploc1", pickupLoc);
             cmd.Parameters.AddWithValue("@dropoffloc1", dropoffLoc);
-            
             */
         }
 
         private void bookbtn_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-6FG9FQD;Initial Catalog=CarRentalSystem;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-6FG9FQD;Initial Catalog=CarRentalSystemDBMSProject;Integrated Security=True");
             con.Open();
 
-            string query = "INSERT INTO LOCATION_DETAILS(ZIPCODE, FROM_DATE, RET_DATE, PICKUP_LOCATION, DROPOFF_LOCATION)" +
-                "VALUES(@zipcode, @fromdate, @retdate, @pickuploc, @dropoffloc)";
+            string query = "INSERT INTO LOCATION_DETAILS(NUMBER_OF_DAYS, PICKUP_LOCATION, DROPOFF_LOCATION)" +
+                "VALUES(@NUMBER_OF_DAYS, @pickuploc, @dropoffloc)";
 
             SqlCommand cmd = new SqlCommand(query, con);
 
-            cmd.Parameters.AddWithValue("@zipcode", zipcode.Text);
-            cmd.Parameters.AddWithValue("@fromdate", dateTimePicker1.Text);
-            cmd.Parameters.AddWithValue("@retdate", dateTimePicker2.Text);
+           // cmd.Parameters.AddWithValue("@zipcode", zipcode.Text);
+            cmd.Parameters.AddWithValue("@NUMBER_OF_DAYS", textBox1.Text);
             cmd.Parameters.AddWithValue("@pickuploc", pickup.Text);
             cmd.Parameters.AddWithValue("@dropoffloc", dropoff.Text);
 

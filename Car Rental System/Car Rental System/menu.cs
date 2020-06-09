@@ -27,7 +27,7 @@ namespace Car_Rental_System
         private void signupbutton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            book ss = new book();
+            bookingDetails ss = new bookingDetails();
             ss.Show();
         }
 
@@ -41,7 +41,7 @@ namespace Car_Rental_System
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            bill ss = new bill();
+            seeBooking ss = new seeBooking();
             ss.Show();
         }
 

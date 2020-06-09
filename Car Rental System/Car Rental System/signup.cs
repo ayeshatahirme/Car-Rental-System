@@ -42,8 +42,8 @@ namespace Car_Rental_System
             string password = passwordtxt1.Text;
             string c_password = cpasswordtxt.Text;
             string membership_id = membershipid.Text;
-
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-6FG9FQD;Initial Catalog=CarRentalSystem;Integrated Security=True");
+            
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-6FG9FQD;Initial Catalog=CarRentalSystemDBMSProject;Integrated Security=True");
             con.Open();
 
             string query= "insert into CUSTOMER_DETAILS(CNIC, FNAME, LNAME, PHONE_NUMBER, EMAIL_ID, PASSWORD1, MEMBERSHIP_ID) " +

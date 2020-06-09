@@ -46,7 +46,7 @@ namespace Car_Rental_System
 
         private void loginbutton_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-6FG9FQD;Initial Catalog=CarRentalSystem;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-6FG9FQD;Initial Catalog=CarRentalSystemDBMSProject;Integrated Security=True");
 
             string admin_ID = admtxt.Text;
             string password = passwordtxt.Text;

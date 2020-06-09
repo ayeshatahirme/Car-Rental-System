@@ -1,3 +1,0 @@
-Resource: 
-- MDN Docs JS
-- watchandcode (practical JS)
