@@ -70,12 +70,6 @@
     <Compile Include="admin_car.Designer.cs">
       <DependentUpon>admin_car.cs</DependentUpon>
     </Compile>
-    <Compile Include="bill.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="bill.Designer.cs">
-      <DependentUpon>bill.cs</DependentUpon>
-    </Compile>
     <Compile Include="bookingDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,9 +125,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin_car.resx">
       <DependentUpon>admin_car.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="bill.resx">
-      <DependentUpon>bill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bookingDetails.resx">
       <DependentUpon>bookingDetails.cs</DependentUpon>

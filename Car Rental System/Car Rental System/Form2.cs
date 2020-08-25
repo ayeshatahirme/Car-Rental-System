@@ -82,9 +82,34 @@ namespace Car_Rental_System
 
         private void loginbutton_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            menu s2 = new menu();
-            s2.Show();
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-6FG9FQD;Initial Catalog=CarRentalSystemDBMSProject;Integrated Security=True");
+
+            string cnic = cnictxt.Text;
+            string password = passwordtxt.Text;
+
+            con.Open();
+            string query = "SELECT * FROM CUSTOMER_DETAILS WHERE CNIC=@ucnic and PASSWORD1=@upass";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@ucnic", cnic);
+            cmd.Parameters.AddWithValue("@upass", password);
+
+            SqlDataAdapter sd = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            sd.Fill(ds);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                this.Clear();
+                this.Hide();
+                menu ss1 = new menu();
+                ss1.Show();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect CNIC or password.");
+            }
+
+            con.Close();
         }
 
         private void exitbutton_Click_1(object sender, EventArgs e)
